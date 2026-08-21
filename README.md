@@ -1,35 +1,69 @@
 # Snake Game
 
-A classic Snake game built with pure HTML, CSS, and JavaScript.
+Classic Snake game that works both in the **browser** and as an **Android APK**.
 
-## How to Play
+## Play in Browser
 
-1. Open `index.html` in your browser (or visit the live demo if enabled).
-2. Use **Arrow Keys** or **WASD** to control the snake.
-3. Eat the red food to grow and increase your score.
-4. Avoid hitting the walls or yourself!
+Just open `index.html` in any modern browser.
 
-## Features
+## Android APK
 
-- Smooth gameplay
-- Score tracking
-- High score saved in localStorage
-- Modern dark theme with neon accents
-- Responsive design
-- Restart / Play Again buttons
+This project includes a full **Gradle-based Android app** that wraps the game in a WebView.
+
+### Build APK with GitHub Actions (Recommended)
+
+1. Go to the **Actions** tab of this repository.
+2. Select **Build APK** workflow.
+3. Click **Run workflow** → **Run workflow**.
+4. After it finishes, download the APK from the **Artifacts** section (`snake-game-apk`).
+
+The workflow also runs automatically on every push to `main`.
+
+### Build Locally
+
+Requirements:
+- Android Studio or JDK 17 +
+- Android SDK
+
+```bash
+# Generate wrapper (first time)
+gradle wrapper
+
+# Build debug APK
+./gradlew assembleDebug
+```
+
+The APK will be at:
+`app/build/outputs/apk/debug/app-debug.apk`
+
+### Features (Android)
+- Fullscreen WebView
+- On-screen D-pad buttons
+- Swipe controls
+- High score saved
+- Portrait lock
+
+## Project Structure
+
+```
+├── index.html / style.css / script.js   ← Browser version
+├── app/
+│   ├── build.gradle
+│   └── src/main/
+│       ├── assets/                      ← Game files for Android
+│       ├── java/com/snake/game/
+│       └── res/
+├── build.gradle
+├── settings.gradle
+└── .github/workflows/build-apk.yml      ← Auto-build APK
+```
 
 ## Controls
 
-| Key          | Action     |
-|--------------|------------|
-| Arrow Keys   | Move       |
-| W A S D      | Move       |
-| Restart btn  | Restart    |
+| Input              | Action          |
+|--------------------|-----------------|
+| Arrow Keys / WASD  | Move (browser)  |
+| Swipe              | Move (Android)  |
+| On-screen buttons  | Move (Android)  |
 
-## Tech Stack
-
-- HTML5 Canvas
-- Vanilla CSS
-- Vanilla JavaScript
-
-Enjoy!
+Enjoy the game!

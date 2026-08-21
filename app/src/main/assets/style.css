@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  width: 95%;
+  max-width: 440px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#gameCanvas {
+  background: #111;
+  border-radius: 12px;
+  border: 3px solid #00f260;
+  box-shadow: 0 0 30px rgba(0, 242, 96, 0.3);
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  touch-action: none;
+}
+
+.controls {
+  margin-top: 1rem;
+}
+
+.controls p {
+  margin-bottom: 0.6rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.middle-row {
+  display: flex;
+  gap: 6px;
+}
+
+.dir-btn {
+  width: 64px;
+  height: 54px;
+  font-size: 1.4rem;
+  background: rgba(0, 242, 96, 0.15);
+  border: 2px solid #00f260;
+  color: #00f260;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.dir-btn:active {
+  background: rgba(0, 242, 96, 0.4);
+}
+
+button {
+  background: linear-gradient(90deg, #00f260, #0575e6);
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#game-over {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.92);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  border: 2px solid #00f260;
+  z-index: 10;
+}
+
+#game-over.hidden {
+  display: none;
+}
+
+#game-over h2 {
+  margin-bottom: 0.5rem;
+  color: #ff4d4d;
+}
+
+#game-over p {
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
